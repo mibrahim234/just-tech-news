@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // GET /api/users
-router.get('/', (req, res) => {
-    // Access our User model and run .findAll() method)
+// Access our User model and run .findAll() method)
     //selects all users from the user table in the database and send it back as JSON.
     // excludes passwords
+router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
       })
@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
           console.log(err);
           res.status(500).json(err);
         });
-
+    });
+    
 // GET /api/users/1
 // using the where option to indicate we want to find a user where its id value equals whatever req.params.id is
 router.get('/:id', (req, res) => {
