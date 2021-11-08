@@ -1,3 +1,5 @@
+const routes = require('./controllers/');
+
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -16,8 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // get files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
-const routes = require('./controllers/');
+app.use(routes);
 
 // turn on connection to db and server
 // method to establish the connection to the database. 
