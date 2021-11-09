@@ -32,8 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-// app.use(routes);
-
 // turn on connection to db and server
 // method to establish the connection to the database. 
 //The "sync" part means that this is Sequelize taking the models and connecting them to associated database tables. 
